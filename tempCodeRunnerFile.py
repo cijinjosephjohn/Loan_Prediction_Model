@@ -1,0 +1,1 @@
+data.insert(3,"Saving Rate ",data["Bank Balance"]/data["Annual Salary"])
