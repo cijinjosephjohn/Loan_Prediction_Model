@@ -19,7 +19,7 @@ print("=====Data description=====")
 
 print(data.describe())
 
-data.insert(3,"Saving Rate ",data["Bank Balance"]/data["Annual Salary"])
+data.insert(3,"Saving Rate",data["Bank Balance"]/data["Annual Salary"])
 
 print(data.head())
 
@@ -76,5 +76,35 @@ print(f"data of person's bal < = 10 : {(data['Bank Balance']<=10).sum()}")
 fig =px.histogram(data,x="Annual Salary",color="Defaulted?",title="Annual Salary Distribution",marginal="box",hover_data = data.columns)
 
 fig.show()
+
+fig = px.histogram(data,x="Saving Rate",color="Defaulted?",marginal="box",hover_data=data.columns)
+fig.show()
+
+
+from sklearn.model_selection import train_test_split
+
+x_train,x_test,y_train,y_test = train_test_split(data.iloc[:,:-1],data.iloc[:,-1],test_size=0.3,stratify=data.iloc[:,-1],random_state=123)
+
+
+print(f"shape of x_train : {x_train.shape},\nshape of x_test : {x_test.shape},\nshape of y_train : {y_train.shape},\nshape of y_test : {y_test.shape}")
+
+import pickle
+
+pickle_out = open("x_train","wb")
+pickle.dump(x_train,pickle_out)
+
+pickle_out = open("y_train","wb")
+pickle.dump(y_train,pickle_out)
+
+pickle_out = open("x_test","wb")
+pickle.dump(x_test,pickle_out)
+
+pickle_out = open("y_test","wb")
+pickle.dump(y_test,pickle_out)
+
+pickle_out.close()
+
+
+
 
 
