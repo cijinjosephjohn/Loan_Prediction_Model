@@ -1,8 +1,12 @@
 import tensorflow as tf
-import pickle 
+# import pickle 
 
-x_train = pickle.load(open("x_train","rb"))
-y_train = pickle.load(open("y_train","rb"))
+# x_train = pickle.load(open("x_train","rb"))
+# y_train = pickle.load(open("y_train","rb"))
+import pandas
+
+x_train = pandas.read_pickle("x_train")
+y_train = pandas.read_pickle("y_train")
 
 
 model = tf.keras.models.Sequential()

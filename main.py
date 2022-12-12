@@ -88,21 +88,31 @@ x_train,x_test,y_train,y_test = train_test_split(data.iloc[:,:-1],data.iloc[:,-1
 
 print(f"shape of x_train : {x_train.shape},\nshape of x_test : {x_test.shape},\nshape of y_train : {y_train.shape},\nshape of y_test : {y_test.shape}")
 
-import pickle
+print(x_train)
 
-pickle_out = open("x_train","wb")
-pickle.dump(x_train,pickle_out)
+import pandas
 
-pickle_out = open("y_train","wb")
-pickle.dump(y_train,pickle_out)
+x_train.to_pickle("x_train")
+y_train.to_pickle("y_train")
+x_test.to_pickle("x_test")
+y_test.to_pickle("y_test")
 
-pickle_out = open("x_test","wb")
-pickle.dump(x_test,pickle_out)
 
-pickle_out = open("y_test","wb")
-pickle.dump(y_test,pickle_out)
+# import pickle
 
-pickle_out.close()
+# pickle_out = open("x_train","wb")
+# pickle.dump(x_train,pickle_out)
+
+# pickle_out = open("y_train","wb")
+# pickle.dump(y_train,pickle_out)
+
+# pickle_out = open("x_test","wb")
+# pickle.dump(x_test,pickle_out)
+
+# pickle_out = open("y_test","wb")
+# pickle.dump(y_test,pickle_out)
+
+# pickle_out.close()
 
 
 
