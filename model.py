@@ -1,8 +1,5 @@
 import tensorflow as tf
-# import pickle 
 
-# x_train = pickle.load(open("x_train","rb"))
-# y_train = pickle.load(open("y_train","rb"))
 import pandas
 
 x_train = pandas.read_pickle("x_train")

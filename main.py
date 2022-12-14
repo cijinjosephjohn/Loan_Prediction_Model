@@ -98,21 +98,7 @@ x_test.to_pickle("x_test")
 y_test.to_pickle("y_test")
 
 
-# import pickle
 
-# pickle_out = open("x_train","wb")
-# pickle.dump(x_train,pickle_out)
-
-# pickle_out = open("y_train","wb")
-# pickle.dump(y_train,pickle_out)
-
-# pickle_out = open("x_test","wb")
-# pickle.dump(x_test,pickle_out)
-
-# pickle_out = open("y_test","wb")
-# pickle.dump(y_test,pickle_out)
-
-# pickle_out.close()
 
 
 
