@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 import plotly.express as px 
-from matplotlib import pyplot as plt 
 
 data = pd.read_csv("Default_Fin.csv")
 
@@ -40,7 +39,7 @@ table = data["Employed"].value_counts().reset_index()
 table.columns = ["Status","Number"]
 table["Status"] = table["Status"].map({1:"Employed",0:"Unemployed"})
 
-# print(table)
+print(table)
 
 fig = px.pie(table,values="Number",names="Status",title="Employed Status")
 
